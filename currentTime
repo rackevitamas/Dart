@@ -1,0 +1,9 @@
+void main() {
+  final ido = DateTime.now();
+  int currentHours = ido.hour;
+  int currentMinutes = ido.minute;
+  int currentSeconds = ido.second;
+  print("Óra: $currentHours");
+  print("Perc: $currentMinutes");
+  print("Másodperc: $currentSeconds");
+}
