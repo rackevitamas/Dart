@@ -1,0 +1,12 @@
+void main() {
+  String myString = "apple";
+  String vowels = "aeiouAEIOU";
+
+  for (int i = 0; i < myString.length; i++) {
+    if (vowels.contains(myString[i])) {
+      break;
+    }
+  }
+
+  print('It found in $myString vowels, so it breaked!');
+}
