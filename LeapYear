@@ -1,0 +1,11 @@
+void main() {
+  final ido = DateTime.now();
+  int currentYear = ido.year;
+  if (currentYear % 4 == 0){
+    print("Szökőév: $currentYear");
+  }
+  else
+  {
+    print("Nem szökőév: $currentYear");
+  }
+}
