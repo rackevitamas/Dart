@@ -1,0 +1,9 @@
+void main() {
+  String quote = "To be, or not to be, that is the question";
+
+  bool containsBee = quote.contains("bee");
+  bool containsToBe = quote.contains("to be");
+
+  print("The string contains 'bee': $containsBee");
+  print("The string contains 'to be': $containsToBe");
+}
