@@ -3,7 +3,7 @@ void main(){
   print("Kérem az egész számot");
   int? beker = int.parse(stdin.readLineSync()!);
   try {
-    int number = int.parse(beker!);
+    int number = beker;
     if (number <= 0) {
       throw FormatException('Érvénytelen érték');
     }
