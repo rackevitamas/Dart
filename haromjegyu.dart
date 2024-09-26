@@ -1,10 +1,9 @@
 import 'dart:io';
-import 'dart:math';
 
-void main(){
+void main() {
   print("Kérem a számot!");
   int? a = int.parse(stdin.readLineSync()!);
-  if (a > 99) {
+  while(a > 99){
     if (a % 2 == 0) {
       print("Páros szám!");
     } else {
@@ -20,8 +19,12 @@ void main(){
     } else {
       print("Nem lehet gyökvonást belőle!");
     }
-  } else {
-    
+    int sum = 0;
+  while (a != 0) {
+    sum += a % 10;
+    a ~/= 10;
   }
-  
+  print('A számjegyek összege: $sum');
+  print('A szám helyiérték szerinti fordítottja: $a.toString().split('').reversed.join('');');
+  }
 }
