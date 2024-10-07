@@ -1,4 +1,5 @@
-void main(List<int> fiboList){
+import 'fiboList.dart';
+void main(){
     print('fiboList hossza: ${fiboList.length}');
     print('fiboList első eleme: ${fiboList.first}');
     print('fiboList utolsó eleme: ${fiboList.last}');
