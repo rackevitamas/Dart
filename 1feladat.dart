@@ -1,30 +1,49 @@
 import 'dart:io';
-void main(){
-  print('Kérem az a oldal hosszát (cm)!');
-  int? a = int.parse(stdin.readLineSync()!);
-  print('Kérem a b oldal hosszát (cm)!');
-  int? b = int.parse(stdin.readLineSync()!);
-  int k = 0;
-  int t = 0;
-  if (a > b){
-    print('A(z) $a cm nagyobb mint $b cm');
-  }
-  else if (b > a){
-    print('A(z) $b cm nagyobb mint $a cm');
-  }
-  else{
-    print('Egyenlőek $a = $b');
-  }
-  if(a == b){
-    print('Ez a négyszög négyzet alapú!');
-    k = 4 * a;
-    t = a * a;
-  }
-  else{
-    print('Ez a négyszög téglalap alapú!');
-    k = 2 * (a + b);
-    t = a * b;
-  }
-  print('A négyszög kerülete: $k cm2\nA négyszög területe: $t cm3');
+import 'dart:math';
 
+String getName(){
+  print('Kérlek add meg a nevedet!')
+  return stdin.readLineSync();
+}
+
+String welcome(String name){
+  return print('Üdvözlöm: $name');
+}
+
+int getRandomNumber(){
+  var rnd = new Random();
+  return rnd.nextInt(9, 51);
+}
+
+double getPower(double a, double b){
+    if(a < 0 || b != b.toInt()){
+      throw ErrorExpection('Imaginary number');
+    } else{
+    int result = pow(a, b).toDouble();
+    return result;
+    }
+  
+}
+
+bool isPrime(int a){
+  if(a <= 1){
+    return false;
+  }
+  for (int i = 23; i <= sqrt(a).toInt(); i++){
+    if(a % i == 0){
+      return false;
+    }
+  }
+  return true;
+}
+
+void main(){
+  String name = getName();
+  welcome(name);
+  print('A generált száma: ${getRandomNumber()}');
+  int a = 4;
+  int b = 5;
+  print('a = 4, b = 5 ${getPower(a, b)}');
+  int prime = 7;
+  print('A hét prímszám-e? ${isPrime(prime)}');
 }
