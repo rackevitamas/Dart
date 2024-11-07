@@ -6,6 +6,13 @@ String getFile(String file){
   return content;
 }
 
+void getLines(String file){
+  List<String> lines = file.split('\n');
+  for (String line in lines) {
+    print(line);
+  }
+}
+
 String getFirstLine(String file){
   List<String> lines = file.split('\n');
   return lines.first;
@@ -16,10 +23,55 @@ String getLastLine(String file){
   return lines.last;
 }
 
+List<String> getRow(String file){
+  return file.split('\n');
+}
+
+List<List<String>> getRowWord(String file){
+  List<String> lines = file.split('\n');
+  return lines.map((line) => line.split(';')).toList();
+  
+
+  /* return file
+    .split('\n')
+    .map((line) => line.split(';'))
+    .toList(); */
+}
+
+void getEmail(String file){
+  List<String> lines = file.split('\n');
+  for (String line in lines){
+    var columns = line.split(";");
+    if (columns.contains("Email")) {
+      continue;
+    }
+    if (columns.length > 2) { 
+      print(columns[2]);
+    }
+  }
+}
+
+void getZipCodeCity(String file){
+  List<String> lines = file.split('\n');
+  for (String line in lines){
+    var columns = line.split(";");
+    if (columns.contains("zipCode") && columns.contains("city")) {
+      continue;
+    }
+    if (columns.length > 4) {
+      print("zipCode: ${columns[3]}, city: ${columns[4]}");
+      }  
+    }
+}
+
 void main() {
 
   String file = getFile('test.txt');
   print(file);
+
+  print("");
+
+  getLines(file);
 
   print("");
 
@@ -33,6 +85,24 @@ void main() {
 
   String file2 = getFile('test.csv');
   print(file2);
+
+  print("");
+
+  getLines(file2);
+
+  print("");
+  
+  print(getRow(file2));
+
+  print("");
+
+  print(getRowWord(file2));
+
+  print("");
+
+  getEmail(file2);
+
+  getZipCodeCity(file2);
   
   /* File file = File('test.txt');
   String contents = file.readAsStringSync();
