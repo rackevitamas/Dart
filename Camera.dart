@@ -14,7 +14,7 @@ void Kiir(){
 
 void main(){
       Camera cam = Camera("Sony", "4K ultra HD", true);
-      Camera cam2 = Camera("Nikon", "4K     ultra HD", false);
+      Camera cam2 = Camera("Nikon", "4K ultra HD", false);
       cam.Kiir();
       cam2.Kiir();
 }
