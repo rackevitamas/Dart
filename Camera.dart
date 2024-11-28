@@ -7,7 +7,7 @@ class Camera{
      Camera(this.brand, this.resulotion, this.canVideo)
 
 void Kiir(){
-    print("A fényképezőgép márkája: ${cam.brand}, felbontása: ${cam.resulotion}, képes felvenni a videót: ${cam.canVideo}.");
+    print("A fényképezőgép márkája: ${this.brand}, felbontása: ${this.resulotion}, képes felvenni a videót: ${this.canVideo}.");
 }
 
 
